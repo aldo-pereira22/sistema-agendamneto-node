@@ -24,6 +24,9 @@ app.set('view engine', 'ejs')
 app.get("/", (req, res) => {
     res.send("TESTE")
 })
+app.get('/cadastro', (req, res) => {
+    res.render('create')
+})
 
 app.listen(5000, () => {
     console.log("Servidor rodando na porta: 5000")
