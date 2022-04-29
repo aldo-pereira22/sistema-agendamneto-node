@@ -45,7 +45,11 @@ app.post('/create', async(req, res) => {
 
     }
 })
+app.get('/getcalendar', async(req, res) => {
+    let consultas = await appointmentService.GetAll(false)
 
+    res.json(consultas)
+})
 app.listen(3000, () => {
-    console.log("Servidor rodando na porta: 3000")
+    console.log("Servidor rodando na porta: 5000")
 })
