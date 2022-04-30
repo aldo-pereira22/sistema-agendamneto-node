@@ -1,6 +1,7 @@
 const appointment = require('../models/Appointment')
-const mogoose = require('mongoose')
-const { default: mongoose } = require('mongoose')
+const mongoose = require('mongoose')
+const AppointmentFactory = require('../factories/AppointmentFactory')
+    // const { default: mongoose } = require('mongoose')
 
 const Appo = mongoose.model('Appointment', appointment)
 class AppointmentService {
@@ -33,8 +34,12 @@ class AppointmentService {
             let appointments = []
 
             appos.forEach(appointment => {
+                if (appointment.date != undefined) {
 
+                    appointments.push(AppointmentFactory.Build(appointment))
+                }
             })
+            return appointments
         }
 
     }

@@ -8,9 +8,10 @@ class AppointmentFactory {
         let year = simpleAppointment.date.getFullYear()
 
         let hour = Number.parseInt(simpleAppointment.time.split(':')[0])
-        let minutes = Number.parseInt(simpleAppointment.time('')[1])
+        let minutes = Number.parseInt(simpleAppointment.time.split(':')[1])
 
         let startDate = new Date(year, month, day, hour, minutes, 0, 0)
+        startDate.setHours(startDate.getHours() - 3)
 
         let appo = {
             id: simpleAppointment._id,
