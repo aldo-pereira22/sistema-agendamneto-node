@@ -29,7 +29,12 @@ class AppointmentService {
         if (showFinished) {
             return await Appo.find()
         } else {
-            return await Appo.find({ 'finished': false })
+            let appos = await Appo.find({ 'finished': false })
+            let appointments = []
+
+            appos.forEach(appointment => {
+
+            })
         }
 
     }
