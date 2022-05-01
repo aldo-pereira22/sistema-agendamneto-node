@@ -4,8 +4,8 @@ const AppointmentFactory = require('../factories/AppointmentFactory')
     // const { default: mongoose } = require('mongoose')
 
 const Appo = mongoose.model('Appointment', appointment)
+
 class AppointmentService {
-    n
     async Create(name, email, description, cpf, date, time) {
         const newappo = new Appo({
             name,
@@ -42,6 +42,16 @@ class AppointmentService {
             return appointments
         }
 
+    }
+
+    async GetById(id) {
+        try {
+
+            let appointment = await Appo.findOne({ '_id': id })
+            return appointment
+        } catch (error) {
+            console.log(error)
+        }
     }
 }
 

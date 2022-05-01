@@ -53,7 +53,8 @@ app.get('/getcalendar', async(req, res) => {
 })
 
 app.get('/event/:id', async(req, res) => {
-    res.json({ id: req.params.id })
+    let appo = await appointmentService.GetById(req.params.id)
+    res.render('event', { appo })
 })
 app.listen(3000, () => {
     console.log("Servidor rodando na porta: 3000")
