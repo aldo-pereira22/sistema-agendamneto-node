@@ -12,6 +12,7 @@ mongoose.connect('mongodb://172.17.0.2:27017/agendamento', { useNewUrlParser: tr
     .catch(err => {
         console.log(err)
     })
+mongoose.set('useFindAndModify', false)
 
 app.use(express.static('public'))
 
@@ -55,6 +56,12 @@ app.get('/getcalendar', async(req, res) => {
 app.get('/event/:id', async(req, res) => {
     let appo = await appointmentService.GetById(req.params.id)
     res.render('event', { appo })
+})
+
+app.post('/finish', async(req, res) => {
+    let id = req.body.id
+    let result = await appointmentService.Finish(id)
+    res.redirect('/')
 })
 app.listen(3000, () => {
     console.log("Servidor rodando na porta: 3000")
