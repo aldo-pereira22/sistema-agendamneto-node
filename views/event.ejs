@@ -1,23 +1,27 @@
-<body>
-    <div class="container">
-        <h2>Consulta:
-            <%= appo.description %>
-        </h2>
-        <hr>
-        <h4>Paciente:
-            <%= appo.name %>
-        </h4>
-        <h4>Email:
-            <%= appo.email %>
-        </h4>
-        <h4>CPF:
-            <%= appo.cpf %>
-        </h4>
-        <hr>
-        <% if( !appo.fineshed) { %>
+<%- include('./partials/homenavbar.ejs')%>
+    <%- include('./partials/header1.ejs')%>
 
-            <button>Finalizar Consulta</button>
-            <% } %>
-    </div>
 
-</body>
+        <body>
+            <div class="container">
+                <h2>Consulta:
+                    <%= appo.description %>
+                </h2>
+                <hr>
+                <h4>Paciente:
+                    <%= appo.name %>
+                </h4>
+                <h4>Email:
+                    <%= appo.email %>
+                </h4>
+                <h4>CPF:
+                    <%= appo.cpf %>
+                </h4>
+                <hr>
+                <% if( !appo.fineshed) { %>
+
+                    <button>Finalizar Consulta</button>
+                    <% } %>
+            </div>
+
+        </body>
