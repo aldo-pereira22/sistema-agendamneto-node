@@ -14,7 +14,7 @@ class AppointmentFactory {
         // let startDate = new Date(year, month, day, hour, minutes, 0, 0)
 
         let startDate = new Date(year, month, day, hours, minutes, 0, 0)
-        startDate.setHours(startDate.getHours() - 3)
+            // startDate.setHours(startDate.getHours() - 3)
 
 
         let appo = {

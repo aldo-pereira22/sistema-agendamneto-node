@@ -37,6 +37,7 @@ app.post('/create', async(req, res) => {
         req.body.date,
         req.body.time
     )
+
     if (status) {
         res.redirect('/')
 
@@ -50,6 +51,10 @@ app.get('/getcalendar', async(req, res) => {
 
     res.json(appointments)
 })
+
+app.get('/event/:id', async(req, res) => {
+    res.json({ id: req.params.id })
+})
 app.listen(3000, () => {
-    console.log("Servidor rodando na porta: 5000")
+    console.log("Servidor rodando na porta: 3000")
 })
