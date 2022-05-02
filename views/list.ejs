@@ -1,0 +1,31 @@
+<%- include('./partials/homenavbar.ejs')%>
+    <%- include('./partials/header1.ejs')%>
+
+
+        <body>
+            <div class="container">
+                <h3>Cnsultas</h3>
+                <form action="" method="POST">
+                    <input type="search" name="search" id="search" placeholder="Digite o e-mail ou cpf">
+                    <button>Pesquisar</button>
+                </form>
+                <hr>
+                <% appos.forEach(appo => { %>
+                    <h1></h1>
+                    <h4>Consulta:
+                        <%= appo.description %>
+                    </h4>
+                    <h4>Nome do paciente:
+                        <%= appo.name %>
+                    </h4>
+                    <h4>Email :
+                        <%= appo.email %>
+                    </h4>
+                    <h4>CPF :
+                        <%= appo.cpf %>
+                    </h4>
+                    <hr>
+
+                    <% }) %>
+            </div>
+        </body>
