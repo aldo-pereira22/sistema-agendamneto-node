@@ -74,6 +74,13 @@ app.get("/searchresult", async(req, res) => {
 
     res.render('list', { appos })
 })
+
+var poolTime = 1000 * 60 * 5
+setInterval(async() => {
+    await appointmentService.SendNotification()
+
+}, poolTime)
+
 app.listen(3000, () => {
     console.log("Servidor rodando na porta: 3000")
 })
